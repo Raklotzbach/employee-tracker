@@ -108,10 +108,10 @@ addDepartment = () => {
             }
         ])
         .then (function (answer) {
-            db.query('INSERT INTO department SET?', {name: answer.newDepartment});
+            db.query(`INSERT INTO department SET?`, {name: answer.newDepartment});
         
 
-         db.query('SELECT * FROM department', function(err, results) {
+         db.query(`SELECT * FROM department`, function(err, results) {
             if (err) throw err;
             console.table('All Departments', results);
             begin();
@@ -132,10 +132,10 @@ addRole = () => {
             },
         ])
         .then (function (answer) {
-            db.query('INSERT INTO role SET?', {name: answer.newRole, salary: answer.salary});
+            db.query(`INSERT INTO roles SET?`, {name: answer.newRole, salary: answer.salary});
         
 
-         db.query('SELECT * FROM role', function(err, results) {
+         db.query(`SELECT * FROM roles`, function(err, results) {
             if (err) throw err;
             console.table('All Roles', results);
             begin();
@@ -156,10 +156,10 @@ addEmployee = () => {
             },
         ])
         .then (function (answer) {
-            db.query('INSERT INTO employee SET?', {name: answer.firstName, name: answer.lastName});
+            db.query(`INSERT INTO employee SET?`, {name: answer.firstName, name: answer.lastName});
         
 
-         db.query('SELECT * FROM employee', function(err, results) {
+         db.query(`SELECT * FROM employee`, function(err, results) {
             if (err) throw err;
             console.table('All Employees', results);
             begin();
